@@ -1,0 +1,969 @@
+﻿﻿<html>
+<head>
+     <title>E-commerce website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+</script>
+<style>
+    *{
+            margin:0;
+            padding:0; 
+}
+body
+{
+           background-color:#f1f3f4;
+           font-family:sans-serif;
+}
+.top-nav-bar
+{
+           height:57px;
+           top:0;
+           position:sticky;
+           background:#fff;
+           margin-bottom:20px;
+           border-bottom:3px solid orange;
+           z-index:2;
+}
+.logo
+{
+           height:15px; 
+           margin:5px 10px;
+}
+.form-control
+{
+           margin-top:9px;
+           margin-left:30px;
+           border:1px solid #000066 ! important;
+          border-top-left-radius:20px ! important;
+     border-bottom-left-radius:20px ! important;
+      border-top-right-radius: 0 ! important;
+       border-bottom-right-radius: 0 ! important;
+           box-shadow: none ! important;
+}
+.input-group-text
+{
+      background:#000066 ! important;
+      border: 1px solid orange ! important;
+      margin: 8.5px 10px 30x 0 ! important;
+      border-top-left-radius: 0px ! important;
+     border-bottom-left-radius: 0px ! important;
+      border-top-right-radius: 20 ! important;
+     border-bottom-right-radius: 20 ! important;
+     cursor:pointer;
+}
+.search-box
+{
+         display:inline-flex;
+         width:60%;
+}
+.fa-search
+{
+        color:#fff;
+}
+.btn-light 
+{
+      margin-left:5px;
+     margin-right:5px;
+}
+.menu-bar
+{
+     width: 40%;
+     height: 57px;
+     float:right;
+}
+.menu-bar ul
+{
+     display:inline-flex;
+     float:right;
+}
+.menu-bar ul li
+{
+     border-left: 1px solid #fff;
+     list-style-type:none;
+     padding:15px 35px;
+     text-align:center;
+     background-color: #000066;
+     cursor:pointer;
+}
+.menu-bar ul li a
+{
+     font-size:16px;
+     font-weight:bold;
+     color:#fff;
+     text-decoration:none;
+}
+.fa-shopping-basket
+{
+     margin-right:5px;
+}
+@media only screen and (max-width:980px)
+{
+  .top-nav-bar
+  {
+       height:118px;
+       border-bottom:0px;
+}
+.logo
+{
+           height:10px; 
+           margin:5px 10px;
+}
+.form-control
+{
+           margin-top:9px;
+           margin-left:10px;
+}
+.search-box
+{
+      width:100%;
+}
+.menu-bar
+{
+     width:100%;
+}
+.menu-bar ul
+{
+     margin:10px  0;
+     width:100%;
+}
+.menu-bar ul li
+{
+     height:57px;
+     width:100%;
+}
+.menu-bar ul li a
+{
+     font-size:10px;
+     font-weight:bold;
+     color:#fff;
+     text-decoration:none;
+}
+}
+
+/*------------------cart-----------------*/
+
+.products-container{
+    max-width: 900px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top:  50px;
+}
+.products-container ion-icon{
+    font-size: 25px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.product-header{
+    width:100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
+    border-left: 1px solid lightgrey;
+}
+.product-title{
+    width: 45%;
+}
+.price{
+    width: 15%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid lightgrey;
+}
+.quantity{
+    width: 30%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid lightgrey;
+}
+
+.total{
+    width: 10%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+.product{
+    width: 45%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: space-around;
+    border-left: 1px solid lightgrey;
+}
+.product ion-icon{
+    cursor: pointer;
+}
+.products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.products img{
+    width: 75px;
+}
+
+.basketTotalContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+.basketTotalTitle{
+    width: 30%;
+    font-size: 20px;
+}
+.basketTotal{
+    width: 10%;
+    font-size: 18px;
+}
+.container1{
+    background-color: gray;
+    width: 100%;
+    height: 10px;
+    display: inline-flex;
+}
+.check{
+    display: inline-flex;
+}
+.empty{
+    width: 100px;
+    margin-left: 680px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width:980px) 
+{
+    .products-container{
+    max-width: 785px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.products-container ion-icon{
+    font-size: 15px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+product-title{
+    font-size: 15px;
+    width:45%;
+}
+.product{
+    font-size: 15px;
+    width: 45%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: space-around;
+}
+.price{
+    font-size: 15px;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    font-size: 15px;
+    width: 25%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+
+.total{
+    font-size: 15px;
+    width: 15%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+.empty{
+    margin-left: 560px;
+}
+
+}
+
+@media only screen and (max-width:830px) {
+    .products-container{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.products-container ion-icon{
+    font-size: 15px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+product-title{
+    font-size: 15px;
+    width:45%;
+}
+.product{
+    font-size: 15px;
+    width: 45%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: space-around;
+}
+.price{
+    font-size: 15px;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    font-size: 15px;
+    width: 25%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+
+.total{
+    font-size: 15px;
+    width: 15%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+.basketTotal{
+    width: 15%;
+    font-size: 15px;
+}
+.basketTotalTitle{
+    width: 25%;
+    font-size: 15px;
+}
+.empty{
+    margin-left: 475px;
+}
+
+}
+@media only screen and (max-width:730px) {
+    .products-container{
+    max-width: 575px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.products-container ion-icon{
+    font-size: 12px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+product-title{
+    font-size: 12px;
+    width:45%;
+}
+.product{
+    font-size: 12px;
+    width: 45%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: space-around;
+}
+.price{
+    font-size: 12px;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    font-size: 12px;
+    width: 25%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+
+.total{
+    font-size: 12px;
+    width: 15%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+.basketTotalTitle{
+    width: 25%;
+    font-size: 15px;
+}
+.basketTotal{
+    width: 15%;
+    font-size: 15px;
+}
+.empty{
+    margin-left: 380px;
+}
+
+}
+@media only screen and (max-width:630px) {
+    .products-container{
+    max-width: 475px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.basketTotalTitle{
+    width: 25%;
+    font-size: 15px;
+}
+.basketTotal{
+    width: 15%;
+    font-size: 15px;
+}
+.empty{
+    margin-left: 250px;
+}
+
+}
+@media only screen and (max-width:550px) {
+    .products-container{
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.product{
+    font-size: 10px;
+}
+.price{
+    font-size: 10px;    
+}
+.quantity{
+    font-size: 10px;
+}
+.total{
+    font-size: 10px;
+}
+.basketTotalTitle{
+    width: 25%;
+    font-size: 10px;
+}
+.basketTotal{
+    font-size: 10px;
+}
+.empty{
+    margin-left: 180px;
+}
+
+}
+@media only screen and (max-width:480px) {
+    .products-container{
+    max-width: 380px;
+    margin: 0 auto;
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.basketTotalTitle{
+    width: 25%;
+    font-size: 10px;
+}
+.basketTotal{
+    font-size: 10px;
+}
+.empty{
+    margin-left: 160px;
+}
+
+}
+/*-----------------------footer--------------------------*/
+
+.footer
+{
+         margin-top:250px;
+          background:#000;
+          color:#fff;
+}
+.footer h1
+{    
+         font-size:15px;
+         margin:25px 0;
+}
+.footer p
+{
+         font-size:12px;
+}
+.copyright
+{    
+         margin-bottom: -80px;
+         text-align:center;
+         font-size:15px;
+         padding-bottom:20px;
+}
+.fa-heart-o
+{
+          color:red;
+          font-size:15px;
+}
+.footer hr
+{
+          margin-top:10px;
+         background-color:#ccc;
+}
+.footer-image img
+{    
+          width:150px;
+}
+.footer  .row  .fa
+{ 
+         padding-right:20px;
+         font-size:15px;
+}
+@media only screen and (max-width:980px)
+{
+        .footer h1
+  {
+           font-size:12px;
+           margin:15px 0;
+   }
+.footer p
+{
+         font-size:10px;
+}
+.footer-image img
+{    
+          width:100px;
+}
+.footer  .row  .fa
+{ 
+         padding-right:15px;
+         font-size:10px;
+}
+}
+</style>
+</head>
+<body>
+       <div class="top-nav-bar">
+       <div class="search-box">
+       <a href="index.html"><img src="https://see.fontimg.com/api/renderfont4/B5A8/eyJyIjoiZnMiLCJoIjoxMjgsInciOjIwMDAsImZzIjo2NCwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNDQkI3QjIiLCJ0IjoxfQ/U2hvcHBpbmdMaXN0/shoppinglist.png" class="logo"></a>
+      <input type="search" class="form-control mr-sm-2" placeholder="search" aria-lable= "search">
+     <button class="btn btn-light my-sm-0" type="submit">  <span class="input-group-text"><i class="fa fa-search"></i></span></button>
+</div>
+  <div class="menu-bar">
+   <ul>
+  <li class="cart"><a href="#"><i class="fa fa-shopping-cart"></i>cart<span>0</span></a></li>
+  <li><a href="Sign up.html">Sign Up</a></li>
+  <li><a href="Log in.html">Log In</a></li>
+</ul>
+</div>
+</div>
+
+
+<!-------------------cart------------------->
+    <section class="cart">
+      <div class="products-container">
+          <div class="product-header">
+              <h5 class="product-title">PRODUCT</h5>
+              <h5 class="price">PRICE</h5>
+              <h5 class="quantity">QUANTITY</h5>
+              <h5 class="total">TOTAL</h5>
+              
+          </div>
+          <div class="products">
+              
+          </div>
+      </div>
+    </section>
+
+<!-------------------Footer------------------->
+
+   <section class="footer">
+       <div class="container  text-center">
+         <div class="row">
+           <div class="col-md-3">
+             <h1>Useful Link</h1>
+             <p>Privacy Policy</p>
+             <p>Terms of Use</p>
+             <p>Return policy</p>
+             <p>Discount coupons</p>
+     </div>
+
+           <div class="col-md-3">
+             <h1>Company</h1>
+               <p>About Us</p>
+               <p>Contact Us</p>
+               <p>Career</p>
+               <p>Affiliate</p>
+     </div>
+
+           <div class="col-md-3">
+             <h1>Follow Us On</h1>
+            <p><i class="fa fa-facebook-official"> 
+</i>Facebook</p>
+               <p><i class="fa fa-youtube-play"> 
+</i>You Tube</p>
+               <p><i class="fa fa-linkedin"> 
+</i>Linked in</p>
+               <p><i class="fa fa-twitter"> 
+</i>Twitter</p>
+     </div>
+                <div class="col-md-3 footer-image">
+             <h1>Download App</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6addzGYFig0DDPwbFacawR770jKzGsQI_NA&usqp=CAU">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRu6sXQTyfnWpfI96KcAc4iZZWN1vwekWKHBQ&usqp=CAU">
+</div>
+  </div>
+      <hr>
+         <p class="copyright">Made with <i 
+   class="fa fa-heart-o"> </i> by megha</p>
+</div>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       <script>
+           function openmenu()
+      {
+         document.getElementById("side-menu").style.display="block";
+
+         document.getElementById("menu-btn").style.display="none";
+
+         document.getElementById("close-btn").style.display="block";
+}
+           function closemenu()
+      {
+         document.getElementById("side-menu").style.display="none";
+
+         document.getElementById("menu-btn").style.display="block";
+
+         document.getElementById("close-btn").style.display="none";
+}
+
+         let carts= document.querySelectorAll('.fa-shopping-cart');
+         
+         let products = [
+             {
+                tag:'images',
+                name:'Tops',
+                price:200.00,
+                inCart:0
+             },
+             {
+                tag:"images",
+                name:"Tops",
+                price:200.00,
+                inCart:0
+             },
+             {
+                tag:"images2",
+                name:"Smart watch",
+                price:500.00,
+                inCart:0
+             },
+             {
+                 tag:"images3",
+                 name:"formal shoes",
+                 price:400.00,
+                 inCart:0
+             },
+             {
+                 tag:"images4",
+                 name:"lather bag",
+                 price:150.00,
+                 inCart:0
+             } 
+         ];
+         
+         for(let i=0; i<carts.length; i++){
+             carts[i].addEventListener('click'
+             ,() =>{
+                 cartNumbers(products[i]);
+                 totalCost(products[i])
+             })
+         }
+         
+         function onLoadCartNumbers(){
+             let productNumbers = localStorage.getItem('cartNumbers');
+             if(productNumbers){
+                 document.querySelector('.cart span').textContent = productNumbers;
+             }
+         }
+         
+         function cartNumbers(product){
+             
+             let productNumbers= localStorage.getItem('cartNumbers');
+             
+             
+             
+             productNumbers = parseInt(productNumbers);
+             
+             if(productNumbers){
+                 localStorage.setItem('cartNumbers',productNumbers + 1);
+                 document.querySelector('.cart span').textContent = productNumbers + 1;
+             } else{
+                 localStorage.setItem('cartNumbers', 1);
+                 document.querySelector('.cart span').textContent = 1;
+             }
+             
+             setItems(product);
+             
+         }
+         
+         function setItems(product){
+             let cartItems = localStorage.getItem('productsInCart');
+             
+             cartItems = JSON.parse(cartItems);
+             
+             if(cartItems != null){
+                 
+                 if(cartItems[product.tag] == undefined){
+                     cartItems = {
+                         ...cartItems,
+                         [product.tag]: product
+                     }
+                 }
+                 cartItems[product.tag].inCart += 1;
+             } else {
+                product.inCart = 1;
+                cartItems = {
+                    [product.tag]: product
+                }
+             }
+             
+             localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+         }
+         
+         function totalCost(product){
+             //console.log("The product price is", product.price);
+             
+             let cartCost = localStorage.getItem('totalCost');
+             
+             console.log("My cartCost is", cartCost);
+             console.log(typeof cartCost);
+             
+             if(cartCost != null){
+                 cartCost = parseInt(cartCost);
+                 localStorage.setItem("totalCost", cartCost + product.price);
+             } else {
+                 localStorage.setItem("totalCost", product.price);
+             }
+
+         }
+
+function displayCart(){
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    let productContainer = document.querySelector(".products");
+    let cartCost = localStorage.getItem('totalCost');
+    
+    console.log(cartItems);
+    if(cartItems && productContainer){
+        productContainer.innerHTML ='';
+        Object.values(cartItems).map(item => {
+            productContainer.innerHTML +=`
+            <div class= "product">
+            <ion-icon name="close-circle-outline"></ion-icon>
+            <img src="./images/${item.tag}.jpeg">
+            <span>${item.name}</span>
+           </div>
+           <div class="price">${item.price},00
+           </div>
+          <div class="quantity">
+            <ion-icon class="decrease" name="caret-back-circle"></ion-icon>
+                  <span class= "inCart">${item.inCart}</span>
+             
+            <ion-icon class="increase" name="caret-forward-circle"></ion-icon>
+           </div>
+           <div class="total">
+            ${item.inCart * item.price},00
+            </div>
+            `;
+
+        });
+
+        productContainer.innerHTML +=`
+        <div class="basketTotalContainer">
+            <h4 class = "basketTotalTitle">
+                products Total
+                </h4>
+                <h4 class = "basketTotal" id="total">
+                    ${cartCost},00
+                    </h4>
+            </div><div class = "container1"></div>
+            <div class="check">
+            <div class="checkout"><button class="placeorder btn" onclick="checkout()">Place Order</button></div>
+                <button class="empty" onclick="emptyCart()" value="Empty Cart">empty</button>
+            </div>    
+            `;
+    
+
+        // productContainer.innerHTML +=`
+        // <div class="discount_code mt-3 shadow">
+        //             <div class="card">
+        //               <div class="card-body">
+        //                 <a class="d-flex justify-content-between" data-toggle="collapse"
+        //                 href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        //                 add a discount code (Optional)
+        //                 <span><i class="fas-fa-chevron-down pt-1"></i></span>
+        //               </a>
+        //               <div class="collapse" id="collapseExample">
+        //                 <div class="mt-3">
+        //                   <input type="text" name="" id="discount_code1" class="font-control font-weight-bold"
+        //                   placeholder=" discount code"> 
+        //                   <small id="error_trw" class="text-dark mt-3">code is small</small>
+        //                 </div>
+        //                 <button class="btn btn-primary btn-sm-3" onclick="discount_code()">Apply</button>                     
+        //               </div>
+        //               </div>
+        //             </div>
+        //           </div>
+        // `
+    }
+}
+
+function deleteButtons() {
+    let deleteButtons = document.querySelectorAll('.product ion-icon');
+    let productNumbers = localStorage.getItem('cartNumbers');
+    let cartCost = localStorage.getItem("totalCost");
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    let productName;
+
+    for(let i=0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener('click', () => {
+            productName = deleteButtons[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+           
+            localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
+            localStorage.setItem('totalCost', cartCost - ( cartItems[productName].price * cartItems[productName].inCart));
+
+            delete cartItems[productName];
+            localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+
+            displayCart();
+            onLoadCartNumbers();
+        })
+    }
+}
+
+function checkout(){
+    emptyCart();
+    alert("Your order has been placed successfully.");
+}
+
+function emptyCart(){
+    localStorage.clear();
+    location.reload();
+}
+deleteButtons(); 
+onLoadCartNumbers();
+displayCart();
+
+
+
+
+var total_cart_amt = document.getElementById('total');
+var discountCode = document.getElementById('discount_code1');
+
+
+const discount_code = () =>{
+    let basketTotal = parseInt(total.innerHTML);
+    let error_trw = document.getElementById('error_trw');
+    if(discountCode.value === 'cart'){
+      let newtotalamt = basketTotal -50;
+      total.innerHTML = newtotalamt;
+      error_trw.innerHTML = " code is valid";
+    }else{
+      error_trw.innerHTML = "Try again! valid code is cart";
+    }
+  }
+
+
+
+
+
+// const decrease = (incdec,total) =>  {
+//     var inCart = document.getElementById(incdec);
+//     var total = document.getElementById(total);
+//     //console.log(inCart.value);
+//     if(inCart.value <= 0){
+//       inCart.value = 0;
+//       alert('negative value not allowed');
+//     }else{
+//       inCart.value = parseInt(inCart.value)-1;
+//       inCart.style.background = '#fff';
+//       inCart.style.color = '#000';
+//     }
+// }
+// const increase = (incdec,total) =>  {
+//     var inCart = document.getElementById(incdec);
+//     var total = document.getElementById(total);
+//     //console.log(inCart.value);
+//     if(inCart.value >= 5){
+//       inCart.value = 5;
+//       alert('max 5 allowed');
+//       inCart.style.background = 'red';
+//       inCart.style.color = '#fff';
+//     }
+// }
+
+            //  const increaseNumber = document.querySelector(".increase"),
+            //  decreaseNumber = document.querySelector(".decrease"),
+            //  inCart= document.querySelector(".inCart");
+
+            //      let a = 1;
+
+            //      increaseNumber.addEventListener("click", () =>{
+            //          a++;
+            //          a = (a < 5) ? + a : a;
+            //          inCart.innerHTML = a;
+            //          console.log(a);
+ 
+            //      });
+
+            //      decreaseNumber.addEventListener("click", () =>{
+            //          a--;
+            //          a = (a > 5) ? - a : a;
+            //          inCart.innerHTML = a;
+            //          console.log(a);
+            //      });
+</script>
+</body>
+</html>
+

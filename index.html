@@ -1,0 +1,1139 @@
+﻿﻿<html>
+<head>
+     <title>E-commerce website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+</script>
+<style>
+    *{
+            margin:0; 
+            padding:0;
+}
+body
+{
+           background-color:#f1f3f4;
+           font-family:sans-serif;
+}
+.top-nav-bar
+{
+           height:57px;
+           top:0;
+           position:sticky;
+           background:#fff;
+           margin-bottom:20px;
+           border-bottom:3px solid orange;
+           z-index:2;
+}
+.logo
+{
+           height:15px; 
+           margin:5px 10px;
+}
+.form-control
+{
+           margin-top:9px;
+           margin-left:30px;
+           border:1px solid #000066 ! important;
+          border-top-left-radius:20px ! important;
+     border-bottom-left-radius:20px ! important;
+      border-top-right-radius: 0 ! important;
+       border-bottom-right-radius: 0 ! important;
+           box-shadow: none ! important;
+}
+.input-group-text
+{
+      background:#000066 ! important;
+      border: 1px solid orange ! important;
+      margin: 8.5px 10px 30x 0 ! important;
+      border-top-left-radius: 0px ! important;
+     border-bottom-left-radius: 0px ! important;
+      border-top-right-radius: 20 ! important;
+     border-bottom-right-radius: 20 ! important;
+     cursor:pointer;
+}
+.search-box
+{
+         display:inline-flex;
+         width:60%;
+}
+.fa-search
+{
+        color:#fff;
+}
+.btn-light 
+{
+      margin-left:5px;
+     margin-right:5px;
+}
+.menu-bar
+{
+     width: 40%;
+     height: 57px;
+     float:right;
+}
+.menu-bar ul
+{
+     display:inline-flex;
+     float:right;
+}
+.menu-bar ul li
+{
+     border-left: 1px solid #fff;
+     list-style-type:none;
+     padding:15px 35px;
+     text-align:center;
+     background-color: #000066;
+     cursor:pointer;
+}
+.menu-bar ul li a
+{
+     font-size:16px;
+     font-weight:bold;
+     color:#fff;
+     text-decoration:none;
+}
+.fa-shopping-basket
+{
+     margin-right:5px;
+}
+@media only screen and (max-width:980px)
+{
+  .top-nav-bar
+  {
+       height:118px;
+       border-bottom:0px;
+}
+.logo
+{
+           height:10px; 
+           margin:5px 10px;
+}
+.form-control
+{
+           margin-top:9px;
+           margin-left:10px;
+}
+.search-box
+{
+      width:100%;
+}
+.menu-bar
+{
+     width:100%;
+}
+.menu-bar ul
+{
+     margin:10px  0;
+     width:100%;
+}
+.menu-bar ul li
+{
+     height:57px;
+     width:100%;
+}
+.menu-bar ul li a
+{
+     font-size:10px;
+     font-weight:bold;
+     color:#fff;
+     text-decoration:none;
+}
+}
+
+/*------------------------Side-menu---------------------*/
+.side-menu
+{
+      height:79%;
+      width:15%;
+      font-size:14px;
+      float:left;
+      z-index:2;
+      background-color:#ddd;
+}
+.side-menu ul
+{
+      margin-left:10px;
+}
+.side-menu ul li
+{
+      font-weight:bold;
+      margin-top:10px;
+      cursor:pointer;
+}
+.side-menu ul li:hover
+{
+      color:orange;
+}
+.side-menu ul li ul
+{
+       display:none;
+       z-index:10px;
+       top:77px;
+}
+.side-menu ul li:hover ul
+{
+      display:block;
+      height:400px;
+      margin-left:14%;
+      padding: 0  100px 10px 10px;
+      position:fixed;
+      background:#ececec;
+      box-shadow: 1px 1px 4px 1px
+      rgba(0,0,0,0.5);
+}
+.fa-angle-right
+{
+       margin-top:4px;
+       margin-right:8px;
+       float:right;
+}
+#menu-btn,#close-btn
+{
+       font-size:30px;
+       margin:10px;
+       color:#000066;
+       display:none;
+}
+@media only screen and (max-width:980px)
+{
+   .side-menu
+{
+         width:34%;
+         z-index:20;
+         top:133px;
+         position:fixed;
+         font-size:12px;
+          display:none;
+}
+    .side-menu ul li ul
+{
+         top:133px;
+}
+   .side-menu ul li:hover ul
+{
+       margin-left:33%;
+}
+#menu-btn
+{
+       display:block;
+}
+}
+
+/*----------------------slider css--------------------*/
+
+.slider
+{
+       width:85%;
+       margin:auto;
+       padding: 0 10px;
+}
+.carousel
+{
+       box-shadow:1px 1px 4px 1px 
+rgba(0,0,0,0.5);  
+}
+.carousel-indicators
+{
+      z-index:1 ! important;
+}
+@media only screen and (max-width:980px)
+{
+    .slider
+{
+        width:100%;
+        margin-left:0;
+}
+}
+/*--------------featured-categories css-------------*/
+
+.featured-categories
+{
+       margin:50px 0;
+}
+.featured-categories img
+{
+        width:100%;
+        height:300px;
+        padding:20px 0;
+         transition:1s;
+         cursor:pointer;
+}
+.featured-categories img:hover
+{
+       transform:scale(1.1);
+}
+@media only screen and (max-width:980px)
+{
+      .featured-categories img
+{
+        width:50%;
+        height:300px;
+        margin-left:30%;
+         transition:1s;
+         cursor:pointer;
+}
+}
+
+/*---------------On Sale Product css----------------*/
+
+.title-box
+{
+     background:#000066;
+     color:#fff;
+     width:180px;
+     padding: 4px 10px;
+     height:40px;
+     margin-bottom:30px;
+     display:flex;
+}
+.title-box h2
+{
+     font-size:24px;
+}
+.title-box:after
+{
+      content: ' ';
+      border-top:40px solid orange;
+      border-right: 50px solid transparent;
+      position:absolute;
+      display:flex;
+      margin-top: -4px;
+      margin-left:170px;
+}
+/*-------------------product-top css---------------------*/
+.product-top img
+{
+      width:100%;
+      height:300px;
+}
+.overlay-right
+{   
+       display:block;
+       opacity:0;
+       position:absolute;
+       top:10%;
+       margin-left:0;
+       Width:70px;
+}
+.overlay-right  .fa
+{
+      cursor:pointer;
+      background-color:#fff;
+      color:#000;
+      height:35px;
+      width:35px;
+      font-size:20px;
+      padding:7px;
+      margin-top:5%;
+      margin-bottom:5%;
+}
+.overlay-right .btn-secondary
+{
+      background:none ! important;
+      border:none ! important;
+      box-shadow:none ! important;    
+}
+.product-top:hover  .overlay-right
+{
+      opacity:1;
+      margin-left:5%;
+      transition: 0.5s;
+}
+
+/*-------------product-bottom css---------------------*/
+
+.product-button  .fa
+{
+      color:orange;
+       font-size:10px;
+}
+.product-button h3
+{
+       font-size:20px;
+       font-weight:bold;
+}
+.product-button h5
+{
+      font-size:15px;
+      padding-bottom:10px;
+}
+@media only screen and (max-width:980px)
+{
+       .product-top img
+{    
+          width:50%;
+        margin-left:30%;
+}
+}
+.new-products
+{
+      margin:50px 0;
+}
+/*---------------------website-features----------------*/
+
+.website-features
+{
+      margin:60px 0;
+}
+.website-features img
+{
+       width:20%;
+}
+.feature-text
+{
+       margin-top:10px;
+       float:right;
+        width:100%;
+        padding-left:20px;
+}
+.feature-box
+{
+        padding-top:20px;
+}
+@media only screen and (max-width:980px)
+{
+        .website-features
+{
+      margin:20px 0;
+}
+.website-features img
+{
+       width:5%;
+}
+.feature-text
+{
+       margin-top:5px;
+       float:right;
+       width:90%;
+       padding-left:5px;
+}
+.feature-box
+{
+        padding-top:10px;
+}
+}
+
+/*-----------------------footer--------------------------*/
+
+.footer
+{
+         margin-top:50px;
+          background:#000;
+          color:#fff;
+}
+.footer h1
+{    
+         font-size:15px;
+         margin:25px 0;
+}
+.footer p
+{
+         font-size:12px;
+}
+.copyright
+{    
+         margin-bottom: -80px;
+         text-align:center;
+         font-size:15px;
+         padding-bottom:20px;
+}
+.fa-heart-o
+{
+          color:red;
+          font-size:15px;
+}
+.footer hr
+{
+          margin-top:10px;
+         background-color:#ccc;
+}
+.footer-image img
+{    
+          width:150px;
+}
+.footer  .row  .fa
+{ 
+         padding-right:20px;
+         font-size:15px;
+}
+@media only screen and (max-width:980px)
+{
+        .footer h1
+  {
+           font-size:12px;
+           margin:15px 0;
+   }
+.footer p
+{
+         font-size:10px;
+}
+.footer-image img
+{    
+          width:100px;
+}
+.footer  .row  .fa
+{ 
+         padding-right:15px;
+         font-size:10px;
+}
+}
+</style>
+</head>
+<body>
+       <div class="top-nav-bar">
+       <div class="search-box">
+        <a href="index.html"><img src="https://see.fontimg.com/api/renderfont4/B5A8/eyJyIjoiZnMiLCJoIjoxMjgsInciOjIwMDAsImZzIjo2NCwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNDQkI3QjIiLCJ0IjoxfQ/U2hvcHBpbmdMaXN0/shoppinglist.png" class="logo"></a>
+      <input type="search" class="form-control mr-sm-2" placeholder="search" aria-lable= "search">
+     <button class="btn btn-light my-sm-0" type="submit">  <span class="input-group-text"><i class="fa fa-search"></i></span></button>
+</div>
+  <div class="menu-bar">
+   <ul>
+  <li class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i>cart<span>0</span></a></li>
+  <li><a href="Sign up.html">Sign Up</a></li>
+  <li><a href="Log in.html">Log In</a></li>
+</ul>
+</div>
+</div>
+
+  <section class="header">
+      <div class="slider">
+         <div id="slider"   
+class="carousel slide carousel-fade" data-
+ride="carousel">
+        <div class="carousel-inner"> 
+     <div class="carousel-item active"> 
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4yFbDWLS4ddncxiFWXaZG4Q1ClxjvnB4sAg&usqp=CAU" class="d-block w-100" height="50%"> 
+     </div> 
+     <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTAiHNRUjhh9CduvSIzuRHPDEBPqoVYXdLPg&usqp=CAU" class="d-block w-100" height="50%"> 
+</div> 
+      <div class="carousel-item">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSFhCamztXgkxvxKEyvIPQRDO9Vm4qzHuxzIw&usqp=CAU" class="d-block w-100" height="50%"> 
+   </div>
+      <div class="carousel-item">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJcYve4Quep6rg98nFmIVq6LeGJ40RqByscg&usqp=CAU" class="d-block w-100" height="50%"> 
+   </div>
+      </div>
+ <ol class="carousel-indicators">
+  <li data-target="#slider" 
+data-slide-to="0" class="active">
+    </li> 
+  <li data-target="#slider" 
+data-slide-to="1">
+  </li> 
+<li data-target="#slider" 
+data-slide-to="2">
+      </li> 
+<li data-target="#slider" 
+data-slide-to="3">
+      </li> 
+</ol>
+</div>
+</div>
+</section>
+
+<!---------------------featured-categories--------------->
+    <section class="featured-categories">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+        <a href="Display.html"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfqqnE9pUlUh1Bp-O62cTFIN5uJp5_w9JeQg&usqp=CAU"></a>
+        </div>
+            <div class="col-md-4">
+       <a href="Display1.html"> <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReJD-01guvwvEf0F3q2jKiYSRhGtr4Sj_P-Q&usqp=CAU"></a>
+        </div>
+            <div class="col-md-4">
+        <a href="Display2.html"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7oVYVCAbeV0TWI-VZjkfTb49qLX4DwKnaMw&usqp=CAU"></a>
+        </div>
+      </div>
+   </div>
+</section>
+
+<!---------------------On Sale Product----------------->
+
+     <section class="on-sale">
+        <div class="container">
+          <div class="title-box">
+           <h2>On Sale</h2>
+       </div>
+           <div class="row">
+           <div class="col-md-3">
+            <div class="product-top">
+  <a href="Etops.html"><img src= "images/images.jpeg"></a>
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+ 
+           <button type="button" class="btn-btn-
+secondary" title="Add to Cart">   
+        <i class="fa fa-shopping-cart" ></i></a>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Tops</h3>
+         <h5>200.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+   <a href="Ewatch.html"><img src= "images/images2.jpeg"></a>
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i></a>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Smart watch</h3>
+         <h5>500.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+  <a href="Eshoes.html"><img src= "images/images3.jpeg"></a>
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i></a>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Formal shoes</h3>
+         <h5>400.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+   <a href="Ebag.html"><img src= "images/images4.jpeg"></a>
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i></a>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Lather bag</h3>
+         <h5>150.00</h5>
+       </div>
+      </div>
+    </div>
+   </div>
+</section>
+<!--------------------New Product--------------------->
+
+
+    <section class="new-products"> 
+              <div class="container">
+          <div class="title-box">
+           <h2>New Arrivals</h2>
+       </div>
+           <div class="row">
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJ7CgPFhllAR3UKaP5h1W2d0hkOa5Yq-FeRw&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Fitness watch</h3>
+         <h5>200.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1s0D8wq5RLtw5nnmgDLDylfL0sbrIL-Lhsw&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Smart watch</h3>
+         <h5>500.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcScfx9ZhV4FediykKO1gxvobNvFOdD5viym6Q&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>formal shoes</h3>
+         <h5>400.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTV8rI0btH9XqRT56xzh2Ui4aUS40WCby-OMg&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>lather bag</h3>
+         <h5>150.00</h5>
+       </div>
+      </div>
+
+              <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdAgva8shyMuG-8kYI2lc19lNLUTAuw__vcQ&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Fitness watch</h3>
+         <h5>200.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSWrvAuSvtl7Yfkw3MQ4QwINuUAz9Ew6Q6Ssw&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>Smart watch</h3>
+         <h5>500.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQwh8BU0FG0JFyivqliDNbtIDsWAME2L_7iA&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3>formal shoes</h3>
+         <h5>400.00</h5>
+       </div>
+      </div>
+
+           <div class="col-md-3">
+            <div class="product-top">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROyuNBm7Kj2HJKN9OV7hJfP-Cbxz4693AxKA&usqp=CAU">
+        <div class="overlay-right">
+          <button type="button" class="btn-btn-
+secondary" title="Quick Shop">
+        <i class="fa fa-eye" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Wishlist">
+        <i class="fa fa-heart-o" ></i>
+       </button>
+          <button type="button" class="btn-btn-
+secondary" title="Add to Cart">
+        <i class="fa fa-shopping-cart" ></i>
+       </button>
+         </div>
+       </div>   
+        <div class="product-button text-center">
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star" ></i>
+        <i class="fa fa-star-half-o" ></i>
+        <h3> bag</h3>
+         <h5>150.00</h5>
+       </div>
+      </div>
+
+    </div>
+   </div>
+  </section>
+<!-------------------website features-------------------->
+
+   <section class="website-features"> 
+     <div class="container">
+       <div class="row">
+         <div class="cal-md-3 feature-box">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2sQKvkfgRszamWsfMrU-de3FlMB2UkkDtjg&usqp=CAU">
+   <div class="feature-text">
+       <p><b>100% Original items</b>are available at company</p>
+</div>
+    </div>
+
+         <div class="cal-md-3 feature-box">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRv9Dp-mECsXLM6PH4pOSKWFyOPai7v9Z14fw&usqp=CAU">
+   <div class="feature-text">
+       <p><b>Return within 30 days</b>of recieving your order.</p>
+</div>
+    </div>
+
+         <div class="cal-md-3 feature-box">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSxcMxvmDEZzLeEHwgstgs--7mRpQnITakD6w&usqp=CAU">
+   <div class="feature-text">
+       <p><b>Get free delivery for every</b>order on more than price.</p>
+</div>
+    </div>
+
+         <div class="cal-md-3 feature-box">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHX1u4t-bpmzBfWNeLAPI17htVBePzrBzs2A&usqp=CAU">
+   <div class="feature-text">
+       <p><b>Pay online through multiple</b>options(card/ net banking)</p>
+</div>
+    </div>
+
+      </div>
+   </div>
+  </section>
+
+<!-------------------Footer------------------->
+
+   <section class="footer">
+       <div class="container  text-center">
+         <div class="row">
+           <div class="col-md-3">
+             <h1>Useful Link</h1>
+             <p>Privacy Policy</p>
+             <p>Terms of Use</p>
+             <p>Return policy</p>
+             <p>Discount coupons</p>
+     </div>
+
+           <div class="col-md-3">
+             <h1>Company</h1>
+               <p>About Us</p>
+               <p>Contact Us</p>
+               <p>Career</p>
+               <p>Affiliate</p>
+     </div>
+
+           <div class="col-md-3">
+             <h1>Follow Us On</h1>
+            <p><i class="fa fa-facebook-official"> 
+</i>Facebook</p>
+               <p><i class="fa fa-youtube-play"> 
+</i>You Tube</p>
+               <p><i class="fa fa-linkedin"> 
+</i>Linked in</p>
+               <p><i class="fa fa-twitter"> 
+</i>Twitter</p>
+     </div>
+                <div class="col-md-3 footer-image">
+             <h1>Download App</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6addzGYFig0DDPwbFacawR770jKzGsQI_NA&usqp=CAU">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRu6sXQTyfnWpfI96KcAc4iZZWN1vwekWKHBQ&usqp=CAU">
+</div>
+  </div>
+      <hr>
+         <p class="copyright">Made with <i 
+   class="fa fa-heart-o"> </i> by megha</p>
+</div>
+</section>
+       <script>
+           function openmenu()
+      {
+         document.getElementById("side-menu").style.display="block";
+
+         document.getElementById("menu-btn").style.display="none";
+
+         document.getElementById("close-btn").style.display="block";
+}
+           function closemenu()
+      {
+         document.getElementById("side-menu").style.display="none";
+
+         document.getElementById("menu-btn").style.display="block";
+
+         document.getElementById("close-btn").style.display="none";
+}
+         let carts= document.querySelectorAll('.fa-shopping-cart');
+         
+         let products = [
+             {
+                tag:'images',
+                name:'Tops',
+                price:200.00,
+                inCart:0
+             },
+             {
+                tag:"images",
+                name:"Tops",
+                price:200.00,
+                inCart:0
+             },
+             {
+                tag:"images2",
+                name:"Smart watch",
+                price:500.00,
+                inCart:0
+             },
+             {
+                 tag:"images3",
+                 name:"formal shoes",
+                 price:400.00,
+                 inCart:0
+             },
+             {
+                 tag:"images4",
+                 name:"lather bag",
+                 price:150.00,
+                 inCart:0
+             }
+         ];
+         
+         for(let i=0; i<carts.length; i++){
+             carts[i].addEventListener('click'
+             ,() =>{
+                 cartNumbers(products[i]);
+                 totalCost(products[i])
+             })
+         }
+         
+         function onLoadCartNumbers(){
+             let productNumbers = localStorage.getItem('cartNumbers');
+             if(productNumbers){
+                 document.querySelector('.cart span').textContent = productNumbers;
+             }
+         }
+         
+         function cartNumbers(product){
+             
+             let productNumbers= localStorage.getItem('cartNumbers');
+             
+             
+             
+             productNumbers = parseInt(productNumbers);
+             
+             if(productNumbers){
+                 localStorage.setItem('cartNumbers',productNumbers + 1);
+                 document.querySelector('.cart span').textContent = productNumbers + 1;
+             } else{
+                 localStorage.setItem('cartNumbers', 1);
+                 document.querySelector('.cart span').textContent = 1;
+             }
+             
+             setItems(product);
+             
+         }
+         
+         function setItems(product){
+             let cartItems = localStorage.getItem('productsInCart');
+             
+             cartItems = JSON.parse(cartItems);
+             
+             if(cartItems != null){
+                 
+                 if(cartItems[product.tag] == undefined){
+                     cartItems = {
+                         ...cartItems,
+                         [product.tag]: product
+                     }
+                 }
+                 cartItems[product.tag].inCart +=1;
+             } else{
+                product.inCart = 1;
+                cartItems = {
+                    [product.tag]:product
+                }
+             }
+             
+             localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+         }
+         
+         function totalCost(product){
+             //console.log("The product price is", product.price);
+             
+             let cartCost = localStorage.getItem('totalCost');
+             
+             console.log("My cartCost is", cartCost);
+             console.log(typeof cartCost);
+             
+             if(cartCost != null){
+                 cartCost = parseInt(cartCost);
+                 localStorage.setItem("totalCost", cartCost + product.price);
+             } else {
+                 localStorage.setItem("totalCost", product.price);
+             }
+
+         }
+         
+         onLoadCartNumbers();
+</script>
+</body>
+</html>
+ 
+
